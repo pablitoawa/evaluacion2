@@ -10,6 +10,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   private API_USUARIOS = 'http://localhost:3000/users';
+  private API_LOGIN = 'http://localhost:3000/login';
 
   ///Leer - GET///
   getUsuarios(): Observable<any> {
@@ -29,5 +30,10 @@ export class UsuariosService {
   ///Borrar - DELETE///
   deleteUsuarios(id: any): Observable<any> {
     return this.http.delete(`${this.API_USUARIOS}/${id}`);
+  }
+
+  ///Login - POST///
+  postLogin(login: any): Observable<any> {
+    return this.http.post(this.API_LOGIN, login);
   }
 }
