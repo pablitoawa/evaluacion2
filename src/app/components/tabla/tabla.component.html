@@ -1,0 +1,36 @@
+
+<div style="display: flex; flex-direction: column; margin: 10px 0; width: 30%;">
+    <label for="filtro" style="font-weight: bold;" >Filtrar por Nº de mesa</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="filtro por mesa"
+      aria-label="filtro"
+      style="margin: 5px"
+      [(ngModel)]="filtro"
+    />
+  </div>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nº Mesa</th>
+        <th>Producto</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(orden of ordenes; track orden){
+      @if (filtro == orden.mesa || filtro == 100 || filtro == 0 || filtro == null) {
+        <tr>
+            <td>{{orden.id}}</td>
+            <td>{{orden.mesa}}</td>
+            <td>{{orden.producto}}</td>
+            <td>$ {{orden.total}}</td>
+          </tr>
+      }
+      }
+    </tbody>
+  </table>
+  

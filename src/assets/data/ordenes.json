@@ -1,0 +1,34 @@
+{
+  "ordenes": [
+    {
+      "id": 1,
+      "mesa": 1,
+      "producto": "Encebollado",
+      "total": 20
+    },
+    {
+      "id": 2,
+      "mesa": 2,
+      "producto": "Sopa de queso",
+      "total": 20
+    },
+    {
+      "id": 3,
+      "mesa": 3,
+      "producto": "Sopa de pollo",
+      "total": 25
+    },
+    {
+      "id": 4,
+      "mesa": 4,
+      "producto": "Arroz marinero",
+      "total": 23
+    },
+    {
+      "id": 5,
+      "mesa": 5,
+      "producto": "Cangrejada",
+      "total": 40
+    }
+  ]
+}

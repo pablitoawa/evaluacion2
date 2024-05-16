@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "email": "mimi@miau.com",
+      "password": "$2a$10$z8uGz2ssdWSqRJNqx.obsu2req03cllS/Hz7omxgPfVgWBtpoT01K",
+      "role": "mesero",
+      "id": 1
+    },
+    {
+      "email": "cat@cat.com",
+      "password": "$2a$10$hWmVV4Kydf60sFmS434vI.6FCfFfibS0iSbnv0O4LpY65YEzLfiuy",
+      "role": "administrador",
+      "id": 2
+    },
+    {
+      "email": "cat@miau.com",
+      "password": "$2a$10$9gmSTfdCAsQUgBQuXr8B5uBm/3c02F5UBiCa3B0ziWppYjxIwISFS",
+      "role": "administrador",
+      "id": 3
+    }
+  ]
+}

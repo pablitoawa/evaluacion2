@@ -1,0 +1,136 @@
+<h1 class="text-center">Gestión de usuarios</h1>
+<div class="container" style="width: 90%;">
+    
+<div class="dropdown">
+    <button
+      type="button"
+      class="btn btn-success"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      data-bs-auto-close="outside"
+      style="margin: 10px 0;"
+    >
+      Crear Usuario
+    </button>
+  
+    <form
+      (ngSubmit)="guardar(formulario)"
+      #formulario="ngForm"
+      class="dropdown-menu dropdown-menu-lg-end p-4"
+      style="width: 300px"
+      >
+      <div class="mb-3">
+        <label>Ingrese email</label>
+        <input
+          type="email"
+          name="email"
+          [(ngModel)]="email"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Ingrese la contraseña</label>
+        <input
+          type="password"
+          name="password"
+          [(ngModel)]="password"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label>Seleccione el rol</label>
+        <select name="role" [(ngModel)]="role" class="form-control">
+            <option value="administrador">Administrador</option>
+            <option value="mesero">Mesero</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label>Ingresar ID</label>
+        <input type="number" name="id" [(ngModel)]="id" class="form-control" />
+      </div>
+  
+  
+      <button type="submit" class="btn btn-success">Crear</button>
+    </form>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Rol</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(usuario of usuarios; track usuario){
+
+    <tr>
+      <td>{{ usuario.id }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.role }}</td>
+      <td class="d-flex">
+
+        <div class="dropdown">
+            <button
+              type="button"
+              class="btn btn-warning"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              data-bs-auto-close="outside"
+              style="margin: 10px 0;"
+            >
+              Actualizar
+            </button>
+          
+            <form
+              (ngSubmit)="editar(formulario)"
+              #formulario="ngForm"
+              class="dropdown-menu dropdown-menu-lg-end p-4"
+              style="width: 300px"
+              >
+              <div class="mb-3">
+                <label>Ingrese email</label>
+                <input
+                  type="email"
+                  name="email"
+                  [(ngModel)]="email"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label>Ingrese la contraseña</label>
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="password"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label>Seleccione el rol</label>
+                <select name="role" [(ngModel)]="role" class="form-control">
+                    <option value="administrador">Administrador</option>
+                    <option value="mesero">Mesero</option>
+                </select>
+              </div>
+        
+              <div class="mb-3">
+                <label>Ingresar ID</label>
+                <input type="number" name="id" [(ngModel)]="id" class="form-control" />
+              </div>
+          
+          
+              <button type="submit" class="btn btn-success">Actualizar</button>
+            </form>
+          </div>
+            <button class="btn btn-danger"style="margin: 0 5px;" (click)="eliminar(usuario.id)">Borrar</button>
+
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>
+</div>

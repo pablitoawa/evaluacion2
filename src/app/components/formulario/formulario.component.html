@@ -1,0 +1,53 @@
+<div class="dropdown">
+  <button
+    type="button"
+    class="btn btn-success"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    data-bs-auto-close="outside"
+  >
+    Crear orden
+  </button>
+
+  <form
+    (ngSubmit)="guardar(formulario)"
+    #formulario="ngForm"
+    class="dropdown-menu dropdown-menu-lg-end p-4"
+    style="width: 300px"
+  >
+    <div class="mb-3">
+      <label>Ingresar ID</label>
+      <input type="number" name="id" [(ngModel)]="id" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label>Ingrese número de mesa</label>
+      <input
+        type="number"
+        name="mesa"
+        [(ngModel)]="mesa"
+        class="form-control"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label>Ingresar producto</label>
+      <input
+        type="text"
+        name="producto"
+        [(ngModel)]="producto"
+        class="form-control"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label>Ingrese el total</label>
+      <input
+        type="number"
+        name="total"
+        [(ngModel)]="total"
+        class="form-control"
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>
